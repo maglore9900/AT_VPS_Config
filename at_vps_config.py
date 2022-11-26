@@ -14,8 +14,8 @@ user = input(f"what would you like to name your account?\nPlease only use lowerc
 # passw = input(f"please enter a password for this account\n\n")
 # os.system(f'adduser -m {user} -p {passw}')
 os.system(f'adduser {user}')
-print(f"We now need to set your password for this account")
-os.system(f'passwd {user}')
+# print(f"We now need to set your password for this account")
+# os.system(f'passwd {user}')
 
 print("adding correct permissions to useracount\n\n")
 os.system(f'usermod -aG sudo {user}')
