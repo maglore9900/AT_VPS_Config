@@ -10,7 +10,7 @@ print("disabling sleep/hibernation\n\n")
 os.system(f'systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target')
 
 print("Now we need to add your user account.")
-user = input(f"what would you like to name your account?\n\n")
+user = input(f"what would you like to name your account?\nPlease only use lowercase letters, as this is required by the operating system.\n\n")
 # passw = input(f"please enter a password for this account\n\n")
 # os.system(f'adduser -m {user} -p {passw}')
 os.system(f'adduser {user}')
