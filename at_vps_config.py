@@ -31,3 +31,4 @@ os.system(f'apt -y install apt-transport-https curl && curl -fsSLo /usr/share/ke
 
 print(f"Configuration complete, rebooting your computer when you hit the enter key, remember, when you log in next, use your new account {user}")
 input()
+os.system('reboot')
