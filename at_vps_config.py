@@ -6,13 +6,16 @@ print("This script has been developed for Ubuntu, if you are using a different L
 host = input("First, what would you like to call this server? Type in your answer below and hit enter. The guide suggests Alchemy, but it can be whatever you want.\n\n")
 os.system(f'hostnamectl set-hostname {host}')
 
-print("disabling sleep/hibernation")
+print("disabling sleep/hibernation\n\n")
 os.system(f'systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target')
 
 print("Now we need to add your user account.")
 user = input(f"what would you like to name your account?\n\n")
-passw = input(f"please enter a password for this account\n\n")
-os.system(f'adduser -m {user} -p {passw}')
+# passw = input(f"please enter a password for this account\n\n")
+# os.system(f'adduser -m {user} -p {passw}')
+os.system(f'adduser -m {user}')
+print(f"We now need to set your password for this account")
+os.system(f'passwd {user}')
 
 print("adding correct permissions to useracount\n\n")
 os.system(f'usermod -aG sudo {user}')
