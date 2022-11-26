@@ -2,15 +2,17 @@ import os
 
 
 print("Welcome to the VPS setup script by Sirj\nThis will implement all the Operating System commands outlined in Perkmeisters VPS setup guide v5.\n\n")
-host = input("First, what would you like to call this server? Type in your answer below and hit enter. The guide suggests Alchemy, but it can be whatever you want")
+print("This script has been developed for Ubuntu, if you are using a different Linux distro, it may not work correctly.\n\n")
+host = input("First, what would you like to call this server? Type in your answer below and hit enter. The guide suggests Alchemy, but it can be whatever you want.\n")
 os.system(f'hostnamectl set-hostname {host}')
 
 print("disabling sleep/hibernation")
 os.system(f'systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target')
 
 print("Now we need to add your useraccount")
-user = input(f"what would you like to name your account?")
-os.system(f'adduser {user}')
+user = input(f"what would you like to name your account?\n")
+passw = intput(f"please enter a password for this account\n")
+os.system(f'adduser -m {user} -p {passw}')
 
 print("adding correct permissions to useracount")
 os.system(f'usermod -aG sudo {user}')
