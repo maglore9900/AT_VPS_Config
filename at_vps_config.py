@@ -13,7 +13,7 @@ print("Now we need to add your user account.")
 user = input(f"what would you like to name your account?\n\n")
 # passw = input(f"please enter a password for this account\n\n")
 # os.system(f'adduser -m {user} -p {passw}')
-os.system(f'adduser -m {user}')
+os.system(f'adduser {user}')
 print(f"We now need to set your password for this account")
 os.system(f'passwd {user}')
 
